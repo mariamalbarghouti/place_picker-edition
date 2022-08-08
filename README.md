@@ -1,4 +1,9 @@
 # Flutter Place Picker [![Pub](https://img.shields.io/pub/v/place_picker.svg)](https://pub.dev/packages/place_picker)
+# If i wanna use it with getX
+- navigate to the library page
+- when back send the map of arguments 
+- recieve the result on map then use the address details as you wanna
+              result = await Get.toNamed(Routes.SETTINGS_ADDRESS_PICKER);
 
 The missing location picker made in Flutter for Flutter. With dark theme and custom localization support.
 
