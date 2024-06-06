@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/widgets/search_input.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1717693163770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717693263369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n       padding: EdgeInsets.symmetric(horizontal: 8),\r\n       child: Row(\r\n         children: <Widget>[\r\n           Icon(Icons.search,\r\n-              color: Theme.of(context).textTheme.body1?.color),\r\n+              color: Theme.of(context).textTheme.bodyLarge?.color),\r\n           SizedBox(width: 8),\r\n           Expanded(\r\n             child: TextField(\r\n               decoration: InputDecoration(hintText: \"Search place\", border: InputBorder.none),\r\n"
+                }
+            ],
+            "date": 1717693163770,
+            "name": "Commit-0",
+            "content": "import 'dart:async';\r\n\r\nimport 'package:flutter/material.dart';\r\n\r\n/// Custom Search input field, showing the search and clear icons.\r\nclass SearchInput extends StatefulWidget {\r\n  final ValueChanged<String> onSearchInput;\r\n\r\n  SearchInput(this.onSearchInput);\r\n\r\n  @override\r\n  State<StatefulWidget> createState() => SearchInputState();\r\n}\r\n\r\nclass SearchInputState extends State<SearchInput> {\r\n  TextEditingController editController = TextEditingController();\r\n\r\n  Timer? debouncer;\r\n\r\n  bool hasSearchEntry = false;\r\n\r\n  SearchInputState();\r\n\r\n  @override\r\n  void initState() {\r\n    super.initState();\r\n    this.editController.addListener(this.onSearchInputChange);\r\n  }\r\n\r\n  @override\r\n  void dispose() {\r\n    this.editController.removeListener(this.onSearchInputChange);\r\n    this.editController.dispose();\r\n\r\n    super.dispose();\r\n  }\r\n\r\n  void onSearchInputChange() {\r\n    if (this.editController.text.isEmpty) {\r\n      this.debouncer?.cancel();\r\n      widget.onSearchInput(this.editController.text);\r\n      return;\r\n    }\r\n\r\n    if (this.debouncer?.isActive ?? false) {\r\n      this.debouncer?.cancel();\r\n    }\r\n\r\n    this.debouncer = Timer(Duration(milliseconds: 500), () {\r\n      widget.onSearchInput(this.editController.text);\r\n    });\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container(\r\n      padding: EdgeInsets.symmetric(horizontal: 8),\r\n      child: Row(\r\n        children: <Widget>[\r\n          Icon(Icons.search,\r\n              color: Theme.of(context).textTheme.body1?.color),\r\n          SizedBox(width: 8),\r\n          Expanded(\r\n            child: TextField(\r\n              decoration: InputDecoration(hintText: \"Search place\", border: InputBorder.none),\r\n              controller: this.editController,\r\n              onChanged: (value) {\r\n                setState(() {\r\n                  this.hasSearchEntry = value.isNotEmpty;\r\n                });\r\n              },\r\n            ),\r\n          ),\r\n          SizedBox(width: 8),\r\n          if (this.hasSearchEntry)\r\n            GestureDetector(\r\n              child: Icon(Icons.clear),\r\n              onTap: () {\r\n                this.editController.clear();\r\n                setState(() {\r\n                  this.hasSearchEntry = false;\r\n                });\r\n              },\r\n            ),\r\n        ],\r\n      ),\r\n      decoration: BoxDecoration(\r\n        borderRadius: BorderRadius.circular(16),\r\n        color: Theme.of(context).canvasColor,\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

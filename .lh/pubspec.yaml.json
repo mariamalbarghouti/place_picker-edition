@@ -1,0 +1,22 @@
+{
+    "sourceFile": "pubspec.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1717693081381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717693088670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n dependencies:\r\n   flutter:\r\n     sdk: flutter\r\n-  http: ^1.1.0,\r\n+  http: 1.1.0\r\n   google_maps_flutter: ^2.0.1\r\n   location: ^4.1.1\r\n   get: ^4.6.1\r\n   \r\n"
+                }
+            ],
+            "date": 1717693081381,
+            "name": "Commit-0",
+            "content": "name: place_picker\r\ndescription: Place picker fully written in dart for Flutter. Comes with autocomplete suggestions and nearby locations list. Localization too.\r\nversion: 0.9.20-nullsafety\r\nhomepage: https://github.com/blackmann/locationpicker\r\n\r\nenvironment:\r\n  sdk: '>=2.12.0 <3.0.0'\r\n\r\ndependencies:\r\n  flutter:\r\n    sdk: flutter\r\n  http: ^1.1.0,\r\n  google_maps_flutter: ^2.0.1\r\n  location: ^4.1.1\r\n  get: ^4.6.1\r\n  \r\ndev_dependencies:\r\n  flutter_test:\r\n    sdk: flutter\r\n\r\n# For information on the generic Dart part of this file, see the\r\n# following page: https://www.dartlang.org/tools/pub/pubspec\r\n\r\n# The following section is specific to Flutter.\r\nflutter:\r\n  # To add assets to your package, add an assets section, like this:\r\n  # assets:\r\n  #  - images/a_dot_burr.jpeg\r\n  #  - images/a_dot_ham.jpeg\r\n  #\r\n  # For details regarding assets in packages, see\r\n  # https://flutter.dev/assets-and-images/#from-packages\r\n  #\r\n  # An image asset can refer to one or more resolution-specific \"variants\", see\r\n  # https://flutter.dev/assets-and-images/#resolution-aware.\r\n  # To add custom fonts to your package, add a fonts section here,\r\n  # in this \"flutter\" section. Each entry in this list should have a\r\n  # \"family\" key with the font family name, and a \"fonts\" key with a\r\n  # list giving the asset and other descriptors for the font. For\r\n  # example:\r\n  # fonts:\r\n  #   - family: Schyler\r\n  #     fonts:\r\n  #       - asset: fonts/Schyler-Regular.ttf\r\n  #       - asset: fonts/Schyler-Italic.ttf\r\n  #         style: italic\r\n  #   - family: Trajan Pro\r\n  #     fonts:\r\n  #       - asset: fonts/TrajanPro.ttf\r\n  #       - asset: fonts/TrajanPro_Bold.ttf\r\n  #         weight: 700\r\n  #\r\n  # For details regarding fonts in packages, see\r\n  # https://flutter.dev/custom-fonts/#from-packages\r\n"
+        }
+    ]
+}

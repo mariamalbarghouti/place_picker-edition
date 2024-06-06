@@ -1,0 +1,18 @@
+{
+    "sourceFile": "example/example.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1717693276396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1717693276396,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\nimport 'package:place_picker/place_picker.dart';\r\n\r\nclass PickerDemo extends StatefulWidget {\r\n  @override\r\n  State<StatefulWidget> createState() => PickerDemoState();\r\n}\r\n\r\nclass PickerDemoState extends State<PickerDemo> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      appBar: AppBar(title: const Text('Picker Example')),\r\n      body: Center(\r\n        child: TextButton(\r\n          child: Text(\"Pick Delivery location\"),\r\n          onPressed: () {\r\n            showPlacePicker();\r\n          },\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n\r\n  void showPlacePicker() async {\r\n    LocationResult? result = await Navigator.of(context).push(\r\n        MaterialPageRoute(builder: (context) => PlacePicker(\"YOUR API KEY\")));\r\n\r\n    // Handle the result in your way\r\n    print(result);\r\n  }\r\n}\r\n"
+        }
+    ]
+}
